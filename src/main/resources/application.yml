@@ -1,0 +1,21 @@
+
+server:
+  port: 8088
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      
+spring:
+  application: 
+    name: ribbonclient   
+#服务名不能带"_"    
+  
+  
+#配置赋值均衡算法  :随机算法
+#被调用的服务的服务名   
+SENDMAIL:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    
